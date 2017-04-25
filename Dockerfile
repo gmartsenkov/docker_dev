@@ -57,6 +57,7 @@ RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bashrc
 
 RUN apt-get update -q \
   && apt-get -q -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev \
+  && rbenv install 2.3.3 \
   && rbenv install 2.2.3 \
   && rbenv install 2.2.5 \
   && rm -rf /var/lib/apt/lists
