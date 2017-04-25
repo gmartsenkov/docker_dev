@@ -65,6 +65,8 @@ RUN rbenv global 2.2.5
 RUN gem install --no-ri --no-rdoc bundler
 RUN rbenv global 2.2.3
 RUN gem install --no-ri --no-rdoc bundler
+RUN rbenv global 2.3.3
+RUN gem install --no-ri --no-rdoc bundler
 RUN rbenv rehash
 
 # Oracle stuff
