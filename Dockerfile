@@ -1,5 +1,5 @@
 FROM ubuntu-debootstrap:trusty
-MAINTAINER Georgi Martsenkov <georgi.martsenkov@vodafone.com>
+MAINTAINER Georgi Martsenkov
 
 RUN locale-gen en_US.UTF-8
 
