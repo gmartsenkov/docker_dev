@@ -1,6 +1,8 @@
-FROM ubuntu-debootstrap:trusty
+FROM ubuntu:zesty
 MAINTAINER Georgi Martsenkov
 
+RUN apt-get clean && apt-get update
+RUN apt-get install locales -y
 RUN locale-gen en_US.UTF-8
 
 ENV HOME /root
@@ -96,6 +98,8 @@ RUN cp -f ~/.nvm/nvm.sh ~/.nvm/nvm-tmp.sh; \
 
 # Install crystal
 RUN curl http://dist.crystal-lang.org/apt/setup.sh | bash
+RUN apt-get install gnupg2 -y
+RUN apt-get install dirmngr -y
 
 RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 09617FD37CC06B54; \
         echo "deb https://dist.crystal-lang.org/apt crystal main" > /etc/apt/sources.list.d/crystal.list; \
